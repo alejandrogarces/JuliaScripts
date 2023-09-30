@@ -13,10 +13,15 @@ Variables de decision:
 ## Modelo de optimización:
 
 $\min \sum_k c_kz_k$
+
 sujeto a
+
 $|\theta_{ij}|\leq \pi/2$
+
 $|p_k|\leq z_kp_k^\text{max}$
+
 $|x_k p_k - \theta_{ij}| \leq (1-z_k)\pi$
+
 $[A_{ik}][p_k] = [s_i]$
 
 La última restriccion es matricial, en donde $A$ es la matriz de incidencia.  Note que cuando $z_k=1$ se activa tanto la restriccion de potencia maxima, como la ecuación de flujo DC.  En caso contrario, $p_k=0$ y $\theta_{km}$ queda libre, aunque desde luego no puede tomar un valor por fuera del rango $[-\pi/2,\pi/2]$.
