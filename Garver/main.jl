@@ -2,11 +2,13 @@ using LinearAlgebra
 using DataFrames
 using CSV
 
+# cargar los datos
 lines  = DataFrame(CSV.File("data_lines.csv"))
 nodes  = DataFrame(CSV.File("data_nodes.csv"))
 num_nodes = maximum(nodes.node)
 num_lines = nrow(lines)
 
+# montar el modelo de optimizacion
 using JuMP
 using HiGHS
 model = Model(HiGHS.Optimizer)
@@ -29,6 +31,8 @@ Pn = (nodes.gen_MW[:]-nodes.load_MW[:])/100
 @constraint(model,Pn .== A*p_lin)
 @objective(model,Min,sum(lines.cost.*z))
 optimize!(model)
+
+# imprimir los resultados
 println("Costo total = ", objective_value(model))
 println("Lines to connect ")
 for k = 1:num_lines
@@ -38,7 +42,7 @@ for k = 1:num_lines
         if lines.cost[k] > 0
           printstyled("line ",k,": ",i,"-->",j, "  ", round(value(p_lin[k])*100,digits=2)," MW\n", color=:blue)
         else
-            println("line ",k,": ",i,"-->",j, "  ", round(value(p_lin[k])*100,digits=2)," MW")
+          println("line ",k,": ",i,"-->",j, "  ", round(value(p_lin[k])*100,digits=2)," MW")
         end
     end
 end
