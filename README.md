@@ -9,3 +9,4 @@ Compendio de scrips asociados al curso de métodos computacionales en sistemas e
 3. Estabilidad transitoria usando el modelo clasico y el sistema de Anderson [Link](https://github.com/alejandrogarces/JuliaScripts/tree/main/EstabilidadTransitoria)
 4. Solución numérica de ecuaciones diferenciales [Link](/ODES/)
 5. Flujo de carga en una red DC usando una función potencial [Link](/PotencialDC/)
+6. Comportamiento fractal del flujo de carga [Link](/Fractales)
