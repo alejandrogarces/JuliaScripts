@@ -1,4 +1,4 @@
-## Flujo de carga usando el método de punto fijo
+## Reconfiguración de alimentadores primarios
 
 Basado en el siguiente artículo:
 
