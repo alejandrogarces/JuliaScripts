@@ -2,6 +2,6 @@
 
 # Contenido
 
-1. Planeación de la transmisión usando el sistema Garver [Garver](https://github.com/alejandrogarces/JuliaScripts/blob/main/Garver/README.md)
+1. Planeación de la transmisión usando el sistema Garver [Link](https://github.com/alejandrogarces/JuliaScripts/tree/main/Garver)
    
 2. 
