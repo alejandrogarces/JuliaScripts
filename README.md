@@ -1,6 +1,6 @@
 # Ejemplos simples en Julia
 
-Compendio de scrips simples asociados al curso de métodos computacionales en sistemas eléctricos.
+Compendio de scrips asociados al curso de métodos computacionales en sistemas eléctricos.
 
 ## Contenido
 
