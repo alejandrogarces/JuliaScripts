@@ -5,6 +5,9 @@
 Estabilidad transitoria usando el modelo clásico.  Basado en el sistema de preba del libro
 
 *Paul M. Anderson; A. A. Fouad, "Frontmatter," in Power System Control and Stability , IEEE, 2003, pp.i-xiv, doi: 10.1109/9780470545577.fmatter.*
+
+![](https://github.com/alejandrogarces/JuliaScripts/blob/main/EstabilidadTransitoria/resultados.svg)
+
 ## Funciones
 
 La mayor parte del codigo esta en el script principal.  Solo se usaron las siguientes funciones:
