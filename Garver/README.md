@@ -5,6 +5,8 @@ Modelo de programación lineal para la planeación de la transmisión basado en 
 
 *L. L. Garver, "Transmission Network Estimation Using Linear Programming," in IEEE Transactions on Power Apparatus and Systems, vol. PAS-89, no. 7, pp. 1688-1697, Sept. 1970, doi: 10.1109/TPAS.1970.292825.*
 
+![](garver.png)
+
 Se cuenta con la información de las líneas incluyendo costos.  Las líneas existentes tienen costo cero El modelo es de programación lineal entera mixta, a saber:
 
 ## Modelo de optimización:
