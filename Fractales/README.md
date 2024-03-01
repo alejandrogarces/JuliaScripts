@@ -1,4 +1,4 @@
-# Comportamiento Fractal del flujo de carga
+# Comportamiento fractal del flujo de carga
 
 ## Resumen
 
