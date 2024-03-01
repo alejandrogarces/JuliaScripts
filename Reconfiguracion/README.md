@@ -1,6 +1,8 @@
-## Reconfiguración de alimentadores primarios
+# Reconfiguración de alimentadores primarios
 
-Basado en el siguiente artículo:
+## Resumen
+
+Sistema de prueba basado en el siguiente artículo:
 
 *S. Civanlar, J. J. Grainger, H. Yin and S. S. H. Lee, "Distribution feeder reconfiguration for loss reduction," in IEEE Transactions on Power Delivery, vol. 3, no. 3, pp. 1217-1223, July 1988, doi: 10.1109/61.193906.*
 
