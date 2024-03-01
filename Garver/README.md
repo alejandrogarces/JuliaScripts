@@ -1,17 +1,19 @@
 # Planeación de la transmision
 
+## Resumen
 Modelo de programación lineal para la planeación de la transmisión basado en el sistema Garver.  
 
 *L. L. Garver, "Transmission Network Estimation Using Linear Programming," in IEEE Transactions on Power Apparatus and Systems, vol. PAS-89, no. 7, pp. 1688-1697, Sept. 1970, doi: 10.1109/TPAS.1970.292825.*
 
 Se cuenta con la información de las líneas incluyendo costos.  Las líneas existentes tienen costo cero El modelo es de programación lineal entera mixta, a saber:
 
+## Modelo de optimización:
+
 Variables de decision:
 * $p_k$ flujo por la linea $k=(i,j)$
 * $z_k$ variable binaria indicando si la línea existe
 * $\theta_i$ angulo en el nodo $i$
 
-## Modelo de optimización:
 
 $\min \sum_k c_kz_k$
 
@@ -33,6 +35,14 @@ Los datos de entrada son dos archivos:
 
     data_lines.csv 
     data_nodes.csv
+
+## Contacto
+
+Alejandro Garcés Ruiz
+
+## Licencia
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 El primero contiene los datos de las líneas.  Pueden existir varias lineas en un mismo corredor, por tanto, se repite el dato las veces que se permitan las líneas en dicho corredor.  Los datos nodales son basicamente potencia nodal.  Se divide por una base de 100 MW.
 
