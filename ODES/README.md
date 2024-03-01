@@ -5,5 +5,7 @@
 ## Método de Runge-Kuta
 
 ## Integración de Verlet
+FALTA
 
 ## Método del salto de rana
+FALTA
