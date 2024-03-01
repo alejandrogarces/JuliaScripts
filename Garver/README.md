@@ -38,6 +38,9 @@ Los datos de entrada son dos archivos:
     data_lines.csv 
     data_nodes.csv
 
+El primero contiene los datos de las líneas.  Pueden existir varias lineas en un mismo corredor, por tanto, se repite el dato las veces que se permitan las líneas en dicho corredor.  Los datos nodales son basicamente potencia nodal.  Se divide por una base de 100 MW.
+
+
 ---
 ## Contacto
 
@@ -47,8 +50,3 @@ Alejandro Garcés Ruiz
 ## Licencia
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-El primero contiene los datos de las líneas.  Pueden existir varias lineas en un mismo corredor, por tanto, se repite el dato las veces que se permitan las líneas en dicho corredor.  Los datos nodales son basicamente potencia nodal.  Se divide por una base de 100 MW.
-
-
-
