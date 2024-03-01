@@ -6,7 +6,8 @@ Estabilidad transitoria usando el modelo clásico.  Basado en el sistema de preb
 
 *Paul M. Anderson; A. A. Fouad, "Frontmatter," in Power System Control and Stability , IEEE, 2003, pp.i-xiv, doi: 10.1109/9780470545577.fmatter.*
 
-![](https://github.com/alejandrogarces/JuliaScripts/blob/main/EstabilidadTransitoria/resultados.svg)
+
+![](https://github.com/alejandrogarces/JuliaScripts/blob/main/EstabilidadTransitoria/sistema_prueba.svg)
 
 ## Funciones
 
@@ -19,6 +20,11 @@ Calcula la reducción de Kron
     function Base.show(io::IO, vec_d::Vector{NamedTuple})
 
 imprime el diccionario correspondiente
+
+## Resultado
+
+![](https://github.com/alejandrogarces/JuliaScripts/blob/main/EstabilidadTransitoria/resultados.svg)
+
 
 ---
 ## Contacto
