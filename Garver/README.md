@@ -36,9 +36,11 @@ Los datos de entrada son dos archivos:
     data_lines.csv 
     data_nodes.csv
 
+---
 ## Contacto
 
 Alejandro Garcés Ruiz
+(https://github.com/alejandrogarces)
 
 ## Licencia
 
