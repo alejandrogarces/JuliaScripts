@@ -8,7 +8,7 @@ Minimiza la cargabilidad en unas lineas asociada a un área de operación, consi
 
 Funcion objetivo:  minimizar la cargabilidad de las líneas asociadas al área de operación A:
 
-$ \min \sum_{km\in A} \left(\frac{p_{km}}{s_{km}^{\text{max}}}\right)^2
+$\min \sum_{km \in A} (p_{km}/s_{km})^2$
 
 Restricciones:  las convencionales asociadas al flujo de carga:
 
@@ -18,7 +18,7 @@ $\theta_{km} - x_{km}p_{km} = 0$
 
 además, una restriccion asociada a las líneas con compensacion serie:
 
-$|\theta_{km}-x_{km}p_{km}| \leq p_{km}x_{\text{maxima compensacion}}$
+$|\theta_{km}-x_{km}p_{km}| \leq p_{km}x_{\text{max}}$
 
 ---
 ## Contacto
