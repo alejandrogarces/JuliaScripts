@@ -4,6 +4,22 @@
 
 Minimiza la cargabilidad en unas lineas asociada a un área de operación, considerando compensación serie.  Se usa el sistema de prueba de 30 nodos
 
+## Modelo
+
+Funcion objetivo:  minimizar la cargabilidad de las líneas asociadas al área de operación A:
+
+$ \min \sum_{km\in A} \left(\frac{p_{km}}{s_{km}^{\text{max}}}\right)^2
+
+Restricciones:  las convencionales asociadas al flujo de carga:
+
+$-\theta_{km}^{\text{max}} \leq \theta_{km} \leq \theta_{km}^{\text{max}}$
+
+$\theta_{km} - x_{km}p_{km} = 0$
+
+además, una restriccion asociada a las líneas con compensacion serie:
+
+$|\theta_{km}-x_{km}p_{km}| \leq p_{km}x_{\text{maxima compensacion}}$
+
 ---
 ## Contacto
 
