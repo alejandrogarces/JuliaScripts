@@ -6,7 +6,7 @@ Compendio de scrips asociados al curso de métodos computacionales en sistemas e
 
 1. Planeación de la transmisión usando el sistema Garver [Link](https://github.com/alejandrogarces/JuliaScripts/tree/main/Garver)
 2. Reconfiguración de alimentadores primarios usando el sistema de Cinvalar [Link](https://github.com/alejandrogarces/JuliaScripts/tree/main/Reconfiguracion)
-3. Flujo de carga en una red DC usando una función potencial [Link](/PotencialDC/)
+3. Flujo de carga en una microrred de corriente directa usando una función potencial [Link](/PotencialDC/)
 4. Comportamiento fractal del flujo de carga [Link](/Fractales)
 5. Flujo de carga linealizado en sistemas de potencia con sistema de prueba de 30 nodos [Link](/Flujo_lineal)
 
