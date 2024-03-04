@@ -9,6 +9,7 @@ Compendio de scrips asociados al curso de métodos computacionales en sistemas e
 3. Flujo de carga en una microrred de corriente directa usando una función potencial [Link](/PotencialDC/)
 4. Comportamiento fractal del flujo de carga [Link](/Fractales)
 5. Flujo de carga linealizado en sistemas de potencia con sistema de prueba de 30 nodos [Link](/Flujo_lineal)
+6. Operación óptima considerando compensación serie para minimizar cargabilidad [Link](/serie)
 
 ## Estabilidad y dinámica de sistemas de potencia
 
