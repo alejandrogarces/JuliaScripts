@@ -64,8 +64,8 @@ end
 function main()
 np = 100
 x_ini = [0;0;0.7]
-gr_x, gr_s, gr_e = Backward_Euler_Method(x_ini,np)
-gr_x2, gr_s2 = Forward_Euler_Method(x_ini,np)
+gr_x, _, _ = Backward_Euler_Method(x_ini,np)
+gr_x2, _ = Forward_Euler_Method(x_ini,np)
 
 plt1 = plot([gr_x[1,:],gr_x2[1,:]],
             linetype=:steppre, 
