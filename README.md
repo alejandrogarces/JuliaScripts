@@ -16,3 +16,4 @@ Compendio de scrips asociados al curso de métodos computacionales en sistemas e
 1. Estabilidad transitoria usando el modelo clasico y el sistema de Anderson [Link](https://github.com/alejandrogarces/JuliaScripts/tree/main/EstabilidadTransitoria)
 2. Solución numérica de ecuaciones diferenciales [Link](/ODES/)
 3. Principio de estabilidad de LaSalle en sistemas discretos [Link](/LaSalleDiscreto/)
+4. Sistemas Hamiltonianos controlados por puertos en forma discreta [Link](/DiscretePH/)
