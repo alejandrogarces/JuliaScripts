@@ -4,12 +4,13 @@
 
 Sistema de potencia de dos áreas representadas por el modelo de segundo orden de la máquina síncrona.
 
-
 ![](plot_two_areas.svg)
 
 ## HVDC.jl
 
 Modelo simplificado de una línea HVDC con el método de voltaje marginal
+
+![](plot_hvdc.svg)
 
 ## Microgrid.jl
 
