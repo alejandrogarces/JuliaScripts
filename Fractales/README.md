@@ -4,9 +4,9 @@
 
 Este codigo muestra el comportamiento fractal del flujo de carga y la importancia de establecer condiciones formales de convergencia.  El sistema no-lineal de ecuaciones es el siguiente:
 
-$ h_1(\theta_{2},\theta_{3}) = 0.4923 - 0.3978\cos(\theta_{2})-1.888\sin(\theta_{2})-0.2439\cos(\theta_{23})-2.0154\sin(\theta_{23})$
+$h_1(\theta_{2},\theta_{3}) = 0.4923 - 0.3978\cos(\theta_{2})-1.888\sin(\theta_{2})-0.2439\cos(\theta_{23})-2.0154\sin(\theta_{23})$
 
-$ h_2(\theta_{2},\theta_{3}) = 3.9234 - 1.6390\cos(\theta_{3})-7.269\sin(\theta_3)-0.2439\cos(\theta_{23})+2.0154\sin(\theta_{23})$
+$h_2(\theta_{2},\theta_{3}) = 3.9234 - 1.6390\cos(\theta_{3})-7.269\sin(\theta_3)-0.2439\cos(\theta_{23})+2.0154\sin(\theta_{23})$
 
 Basado en el sistema de prueba de
 
