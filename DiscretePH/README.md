@@ -16,6 +16,7 @@ Modelo simplificado de una línea HVDC con el método de voltaje marginal
 
 Modelo simplificado de una microrred con tres recursos basados en inversores
 
+![](plot_microgrid.svg)
 
 
 ---
