@@ -6,6 +6,8 @@ En este script se muestran diferentes ejemplos en donde se estima la basija de a
 * Ejemplo B: red trifásica en AC con diferentes puntos iniciales
 * Ejemplo C: simulación cuasi-dinámica
 
+![](plot_convergencia.gif)
+
 ---
 ## Contacto
 
