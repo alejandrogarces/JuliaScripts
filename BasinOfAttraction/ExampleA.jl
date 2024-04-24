@@ -1,4 +1,4 @@
-# Estimación de la basija de atracción para el flujo de carga en una red DC simple
+# Estimación de la vasija de atracción para el flujo de carga en una red DC simple
 
 using LinearAlgebra
 using Plots
