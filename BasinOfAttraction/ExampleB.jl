@@ -119,17 +119,21 @@ Ynn = sparse(Ynn)
 In = Yns*Vs
 α1,α2,rmin,rmax = Bacin(Ybus, Vs, Sn, NumN)
 Vini = kron(Vs,ones(NumN-1,1))
+_, err = LoadFlowFP(Ynn,Sn,(1-rmax)*Vini,In)
+plt = plot(err,yaxis=:log,color=:gray, legend = false)
+VectErr = zeros(10,100)
 for k = 1:100
     nu = (1-rmax)+k/100*(2*rmax)
-    Vf, err = LoadFlowFP(Ynn,Sn,nu*Vini,In)
+    _, err = LoadFlowFP(Ynn,Sn,nu*Vini,In)
     plt = plot!(err,yaxis=:log,color=:gray, legend = false)
+    VectErr[:,k] = err
 end
 plt = plot!(err,yaxis=:log,color=:green, marker = 4, legend = false,
             xlabel="iteración", ylabel="error")
 theme(:dark)
 display(plt)
-return plt
+return VectErr
 end
 
 
-main()
+Verr = main()
