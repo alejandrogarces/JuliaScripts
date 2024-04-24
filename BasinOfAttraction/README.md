@@ -17,3 +17,11 @@ Alejandro Garcés Ruiz
 ## Licencia
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## cita
+
+    @misc{GitHubAgarces,
+    author={Alejandro Garces-Ruiz},
+    title={GitHub repository estimation basin of atraction},
+    year={2024},
+    url={https://github.com/alejandrogarces/JuliaScripts/tree/562de4c48f8ea450ce13371b3ba6263783729a47/BasinOfAttraction}
