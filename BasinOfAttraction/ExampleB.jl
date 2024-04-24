@@ -128,6 +128,7 @@ for k = 1:100
     plt = plot!(err,yaxis=:log,color=:gray, legend = false)
     VectErr[:,k] = err
 end
+_, err = LoadFlowFP(Ynn,Sn,Vini,In)    
 plt = plot!(err,yaxis=:log,color=:green, marker = 4, legend = false,
             xlabel="iteración", ylabel="error")
 theme(:dark)
