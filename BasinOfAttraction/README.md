@@ -1,4 +1,4 @@
-# Estimación de la vasija de atracción para el flujo de carga en redes de distribución
+# Estimación de la cuenca o vasija de atracción para el flujo de carga en redes de distribución
 
 En este script se muestran diferentes ejemplos en donde se estima la vasija de atracción en redes de distribución
 
