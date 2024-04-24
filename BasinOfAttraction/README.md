@@ -1,0 +1,17 @@
+# Estimación de la basija de atracción para el flujo de carga en redes de distribución
+
+En este script se muestran diferentes ejemplos en donde se estima la basija de atracción en redes de distribución
+
+* Ejemplo A: red de distribución en DC
+* Ejemplo B: red trifásica en AC con diferentes puntos iniciales
+* Ejemplo C: simulación cuasi-dinámica
+
+---
+## Contacto
+
+Alejandro Garcés Ruiz
+(https://github.com/alejandrogarces)
+
+## Licencia
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
