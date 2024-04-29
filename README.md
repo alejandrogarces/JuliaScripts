@@ -11,6 +11,7 @@ Compendio de scrips asociados al curso de métodos computacionales en sistemas e
 5. Flujo de carga linealizado en sistemas de potencia con sistema de prueba de 30 nodos [Link](/Flujo_lineal)
 6. Operación óptima considerando compensación serie para minimizar cargabilidad [Link](/serie)
 7. Estimación de la basija de atracción para el flujo de carga [Link](/BasinOfAttraction)
+8. Flujo de carga óptimo usando linealización de Wirtinger [Link](/OPF)
 
 ## Estabilidad y dinámica de sistemas de potencia
 
