@@ -6,11 +6,13 @@ $\min V_r^\top G V_r + V_i^\top G V_i$
 
 sujeto a:
 
-$v^*_k = y_{km}(v^*_k+v_m-1)$
+$v_k^* = y_{km} (v_k^*+v_m-1) $ 
 
-$\left\|v_k-1\right\|_1 \leq 0.1$
-$0 \leq p_g \leq p_{max}$ 
-$0 \leq q_g \leq q_{max}$ 
+$\left\|v_{k}-1\right\|_1 \leq 0.1$
+
+$0 \leq p_{g} \leq p_{max}$ 
+
+$0 \leq q_{g} \leq q_{max}$ 
 
 
 ## Contacto
