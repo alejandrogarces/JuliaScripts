@@ -32,7 +32,7 @@ function LinearOPF(Lines,Nodes)
     Vn = Vreal + Vimag*1im
     Sn = Pg+Qg*1im-Nodes.Pload - Nodes.Qload*1im
     for k = 1:n
-        @constraint(model,conj(Sn[k]) == sum(Ybus[k,m]*conj(Vn[k])*Vn[m] for m in 1:n))
+        @constraint(model,conj(Sn[k]) == sum(Ybus[k,m]*(conj(Vn[k])+Vn[m]-1) for m in 1:n))
         @constraint(model,0<= Pg[k] <= Nodes.Pmax[k])
         @constraint(model,-Nodes.Qmax[k]<= Qg[k] <= Nodes.Qmax[k])
         @constraint(model, 0.9 <= Vreal[k] <= 1.1)
