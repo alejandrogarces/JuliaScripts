@@ -3,64 +3,207 @@ using Plots
 
 struct pHsystem
     name::String
-    J::Matrix
-    R::Matrix
+    J::Function
+    R::Function
     dH::Function
     H::Function
-    g::Function
-    u::Function 
+    G::Function
+    u::Function
+    nx :: Int
+    nu :: Int 
 end
 
-f(x) =  [1-2*sin(x[2])-10*x[1]; 2*pi*60*x[1]]
+function Base.show(io::IO, p::pHsystem)
+    printstyled(io,"Port Hamiltonian System\n", color=:blue)
+    println(io,"   .num_n:\t $(p.nx) \t (number of state variables)")
+    println(io,"   .num_l:\t $(p.nu) \t (number of inputs)")    
+end   
 
-# Metodo de Euler
-function ode_Euler(f,x_ini,dt,steps)
-    t = zeros(steps)
-    n = length(x_ini)
-    x = zeros(n,steps)
-    h = zeros(steps)
-    x[:,1] = x_ini
-    h[1] = pi*60*x_ini[1]^2 - 2*cos(x_ini[2])
-    for k = 1:steps-1
-        x[:,k+1] = x[:,k] + f(x[:,k])*dt
-        t[k+1] = t[k] + dt
-        h[k+1] = pi*60*x[1,k+1]^2 - 2*cos(x[2,k+1])
+function ExplicitEuler(S,xini,dt,nt)
+    tode = (1:nt)*dt
+    xode = zeros(S.nx,nt)
+    uode = zeros(S.nu,nt)
+    yode = zeros(S.nu,nt)
+    Hode = zeros(nt)
+    x = xini
+    xode[:,1] = x
+    uode[:,1] = [S.u(x)]
+    yode[:,1] = [transpose(S.G(x))*S.dH(x)]
+    Hode[1] = S.H(x)
+    for k = 2:nt
+        f = (S.J(x)-S.R(x))*S.dH(x)+S.G(x)*S.u(x)
+        x = x + dt*f
+        xode[:,k] = x
+        uode[:,k] = [S.u(x)]
+        yode[:,k] = [transpose(S.G(x))*S.dH(x)]
+        Hode[k] = S.H(x)    
     end
-    return t,x,h
+    return tode,xode,uode,yode,Hode
 end
 
-# Metodo de Runge-Kuta
-function ode_RungeKuta(f,x_ini,dt,steps)
-    t = zeros(steps)
-    n = length(x_ini)
-    x = zeros(n,steps)
-    h = zeros(steps)
-    x[:,1] = x_ini
-    h[1] = pi*60*x_ini[1]^2 - 2*cos(x_ini[2])
-    for k = 1:steps-1
-        K1 = f(x[:,k])
-        K2 = f(x[:,k]+0.5*dt*K1)
-        K3 = f(x[:,k]+0.5*dt*K2)
-        K4 = f(x[:,k]+dt*K3)
-        x[:,k+1] = x[:,k] + dt*(K1+2*K2+2*K3+K4)/6
-        t[k+1] = t[k] + dt
-        h[k+1] = pi*60*x[1,k+1]^2 - 2*cos(x[2,k+1])
+
+function ImplicitEuler(S,xini,dt,nt)
+    tode = (1:nt)*dt
+    xode = zeros(S.nx,nt)
+    uode = zeros(S.nu,nt)
+    yode = zeros(S.nu,nt)
+    Hode = zeros(nt)
+    x = xini
+    xode[:,1] = x
+    uode[:,1] = [S.u(x)]
+    yode[:,1] = [transpose(S.G(x))*S.dH(x)]
+    Hode[1] = S.H(x)
+    for k = 2:nt
+        xa = x
+        f = (S.J(xa)-S.R(xa))*S.dH(xa)+S.G(xa)*S.u(xa)
+        xn = x + dt*f
+        err = norm(xn-xa)
+        xa = xn
+        m = 0
+        while (err>1E-8)&(m<50)
+            f = (S.J(xa)-S.R(xa))*S.dH(xa)+S.G(xa)*S.u(xa)
+            xn = x + dt*f
+            err = norm(xn-xa)
+            xa = xn
+            m += 1
+        end
+        if m >= 50
+            println("No converge el punto fijo")
+        end 
+        x = xn
+        xode[:,k] = x
+        uode[:,k] = [S.u(x)]
+        yode[:,k] = [transpose(S.G(x))*S.dH(x)]
+        Hode[k] = S.H(x)    
     end
-    return t,x,h
+    return tode,xode,uode,yode,Hode
 end
 
 
+function ExplicitRungeKutta(S,xini,dt,nt)
+    tode = (1:nt)*dt
+    xode = zeros(S.nx,nt)
+    uode = zeros(S.nu,nt)
+    yode = zeros(S.nu,nt)
+    Hode = zeros(nt)
+    x = xini
+    xode[:,1] = x
+    uode[:,1] = [S.u(x)]
+    yode[:,1] = [transpose(S.G(x))*S.dH(x)]
+    Hode[1] = S.H(x)
+    F(x) = (S.J(x)-S.R(x))*S.dH(x)+S.G(x)*S.u(x)
+    for k = 2:nt
+        f1 = F(x)
+        f2 = F(x+dt*f1/2)
+        f3 = F(x+dt*f2/2)
+        f4 = F(x+dt*f3)
+        x = x + dt*(f1+2*f2+2*f3+f4)/6
+        xode[:,k] = x
+        uode[:,k] = [S.u(x)]
+        yode[:,k] = [transpose(S.G(x))*S.dH(x)]
+        Hode[k] = S.H(x)    
+    end
+    return tode,xode,uode,yode,Hode
+end
 
-steps = 300
-dt = 0.01
-x_ini = [0.0;0.0]
-t_euler,x_euler,h_euler = ode_Euler(f,x_ini,dt,steps)
-t_rk,x_rk,h_rk = ode_RungeKuta(f,x_ini,dt,steps)
 
-p1 = plot(t_euler,[x_euler[1,:],x_rk[1,:]])
-p2 = plot(t_euler,[x_euler[2,:],x_rk[2,:]])
-p3 = plot(t_euler,[h_euler,h_rk])
+function ImplicitRungeKutta(S,xini,dt,nt)
+    tode = (1:nt)*dt
+    xode = zeros(S.nx,nt)
+    uode = zeros(S.nu,nt)
+    yode = zeros(S.nu,nt)
+    Hode = zeros(nt)
+    x = xini
+    xode[:,1] = x
+    uode[:,1] = [S.u(x)]
+    yode[:,1] = [transpose(S.G(x))*S.dH(x)]
+    Hode[1] = S.H(x)
+    F(x) = (S.J(x)-S.R(x))*S.dH(x)+S.G(x)*S.u(x)
+    for k = 2:nt
+        xa = x
+        f1 = F(xa)
+        f2 = F(xa+dt*f1/2)
+        f3 = F(xa+dt*f2/2)
+        f4 = F(xa+dt*f3)
+        xn = x + dt*(f1+2*f2+2*f3+f4)/6
+        err = norm(xn-xa)
+        xa = xn
+        m = 0
+        while (err>1E-8)&(m<50)
+            f1 = F(xa)
+            f2 = F(xa+dt*f1/2)
+            f3 = F(xa+dt*f2/2)
+            f4 = F(xa+dt*f3)
+            xn = x + dt*(f1+2*f2+2*f3+f4)/6            
+            err = norm(xn-xa)
+            xa = xn
+            m += 1
+        end
+        if m >= 50
+            println("No converge el punto fijo")
+        end 
+        x = xn
+        xode[:,k] = x
+        uode[:,k] = [S.u(x)]
+        yode[:,k] = [transpose(S.G(x))*S.dH(x)]
+        Hode[k] = S.H(x)    
+    end
+    return tode,xode,uode,yode,Hode
+end
 
-plot(p1,p2,p3,layout=(3,1))
+
+function main()
+xini = [0.9;0.8]
+tend = 1
+dt = 1/60/4
+nt = 800
+wbase = 2*pi*60
+M = 30
+xi = 0
+Pm = 5
+Pmax = 10
+J(x) = [0 -1; 1 0]
+R(x) = diagm([xi/wbase,0])
+H(x) = wbase/(2*M)*x[1]^2 + -Pmax*cos(x[2])
+dH(x) = [wbase*x[1]/M; Pmax*sin(x[2])]
+f(x)  = (J-R)*dH(x) + [1;0]*Pm
+G(x) = [1;0]
+u(x) = Pm
+SMIB = pHsystem("Single Machine Infinite Bus System",J,R,dH,H,G,u,2,1)
+
+theme(:dark)
+
+tode,xode,uode,yode,Hode = ExplicitEuler(SMIB,xini,dt,nt)
+p1 = plot(tode,xode[1,:],label="x_1 expEuler")
+p2 = plot(tode,xode[2,:],label="x_2 expEuler")
+p3 = plot(tode,uode[1,:],label="u expEuler")
+p4 = plot(tode,Hode,label="H expEuler")
+
+tode,xode,uode,yode,Hode = ImplicitEuler(SMIB,xini,dt,nt)
+yu = yode.*uode
+p1 = plot(p1,tode,xode[1,:],label="x_1 impEuler")
+p2 = plot(p2,tode,xode[2,:],label="x_2 impEuler")
+p3 = plot(p3,tode,uode[1,:],label="u impEuler")
+p4 = plot(p4,tode,Hode,label="H impEuler")
+
+tode,xode,uode,yode,Hode = ExplicitRungeKutta(SMIB,xini,dt,nt)
+p1 = plot(p1,tode,xode[1,:],label="x_1 expRK")
+p2 = plot(p2,tode,xode[2,:],label="x_2 expRK")
+p3 = plot(p3,tode,uode[1,:],label="u expRK")
+p4 = plot(p4,tode,Hode,label="H expRK")
+
+tode,xode,uode,yode,Hode = ImplicitRungeKutta(SMIB,xini,dt,nt)
+p1 = plot(p1,tode,xode[1,:],label="x_1 impRK")
+p2 = plot(p2,tode,xode[2,:],label="x_2 impRK")
+p3 = plot(p3,tode,uode[1,:],label="u impRK")
+p4 = plot(p4,tode,Hode,label="H impRK")
+
+plt = plot(p1,p2,p3,p4,layout=(2,2))
+display(plt)
+return SMIB
+end
+
+
+S = main()
 
 
