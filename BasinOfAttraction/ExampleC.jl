@@ -56,7 +56,7 @@ function LoadFeeder(file::String)
     # cargas
     Snode = complex(zeros(3*NumN,NumT))
     for load in eachrow(Loads)
-        n = load[1]*load[2]
+        n = load[1]+(load[2]-1)*NumN
         Powerfactor = load[3]
         pro = load[4]
         Snode[n,:] = -Profiles[:,pro]*(1+1im*sqrt(1/Powerfactor^2-1))/Pbase/1000        
