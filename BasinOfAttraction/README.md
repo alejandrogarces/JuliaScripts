@@ -24,4 +24,4 @@ Alejandro Garcés Ruiz
     author={Alejandro Garces-Ruiz},
     title={GitHub repository estimation basin of atraction},
     year={2024},
-    url={https://github.com/alejandrogarces/JuliaScripts/tree/562de4c48f8ea450ce13371b3ba6263783729a47/BasinOfAttraction}
+    url={https://github.com/alejandrogarces/JuliaScripts/tree/BasinOfAttraction}
