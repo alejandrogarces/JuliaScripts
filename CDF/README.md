@@ -1,5 +1,6 @@
 # Lee archivos tipo CDF
 
+Importa archivos CDF (common data format) y regresa dos CSV que pueden ser manejados fácilmente como dataframes.
 
 ---
 ## Contacto
