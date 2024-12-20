@@ -48,7 +48,7 @@ Open the folder in Visual-Studio Code.
 
 A single sinchronous machine connected to an infinite bus can be represented as follows:
 
-$ M \Delta\dot{\omega} = p_m-p_e-\xi \Delta\omega$
+$M \Delta\dot{\omega} = p_m-p_e-\xi \Delta\omega$
 
 $\dot{\delta} = \omega_B\Delta\omega$
 
