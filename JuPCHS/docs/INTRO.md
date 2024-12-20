@@ -41,7 +41,7 @@ $\dot{S} \leq u^\top y$
 
 This property is closely related to Lyapunov stability.  If $S$ has a strict minimum at a certain state $x^\star$, then $x^\star$ is a stable equlibrium point for the unforced dynamics (i.e., $u=0).    
 
-A storage function for a PCHS can be defined as $S(x)=H(x)-H(x^\star)$ with $x^\star \in \operatorname{argmin} H(x)$. Therefore, the system is passive.
+A storage function for a PCHS can be defined as $S(x)=H(x)-H(x^\star)$ with $x^\star \in \text{argmin} H(x)$. Therefore, the system is passive.
 
 Passivity is preserved after parallel and feedback interconnection. These relevant properties are maintained in a natural manner using JuPCHS.  The manual below shows the use of the package.
 
