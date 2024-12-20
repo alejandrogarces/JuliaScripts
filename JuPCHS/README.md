@@ -97,10 +97,10 @@ JuPCHS utilizes the backward-Euler as by default.  However, it is possible to ch
 ### Tutorial
 
 * [Introduction](docs/INTRO.md)
-* [Defining Port-Controlled Hamiltonian Systems](docs/CH1.md)
-* [Operations with PCHS that preserves structural properties](docs/CH2.md)
-* [Simulation methods for PCHS](docs/CH3.md)
-* [Analysis methods for PCHS](docs/CH4.md)
+* [Defining Port-Controlled Hamiltonian Systems](docs/CH01.md)
+* [Operations with PCHS that preserves structural properties](docs/CH02.md)
+* [Simulation methods for PCHS](docs/CH03.md)
+* [Analysis methods for PCHS](docs/CH04.md)
 
 ## Citing JuPCHS
 
