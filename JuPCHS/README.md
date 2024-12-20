@@ -24,7 +24,7 @@ where
 ## What can JuPCHS do ?
 
 JuPCHS is a package for simulation, analysis and control port-controlled Hamiltonian systems. JuPCHS make easy to create PCHS considering structural properties, namely:
-* It checks positivity of $R$ and skew-symmetry of $J$*. 
+* It checks positivity of $R$ and skew-symmetry of $J$. 
 * It allows operations such as interconection and feedback.  
 * It is easy to simulate the system using different methods for solving ordinary differential equations such as forward and backward Euler, Runge Kutta and MidPoint.
 * Allows to easily find an equilibrium point
