@@ -88,7 +88,7 @@ In this case, JuPCHS excecuted a simulation with 1000 points starting from xini 
 
     PlotResults(PCHS=SMIB,data=results)
 
-![image](/docs/PlotExample01.svg)
+![image](docs/PlotExample01.svg)
     
 JuPCHS utilizes the backward-Euler as by default.  However, it is possible to change the solver to Forward Euler, Runge Kutta, Implicit Runge Kutta and, MidPoint, among others.  More details from this and other examples can be found in the tutorial (below).
 
