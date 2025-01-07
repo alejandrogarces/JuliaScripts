@@ -3,6 +3,7 @@
 ## Resumen
 
 Este simple script muestra diferentes versiones del método del gradiente para una forma cuadrática.
+Se supone que la forma cuadratica es fuertemente convexa con gradiente Lipschitz.
 
 ![](gradiente.svg)
 
