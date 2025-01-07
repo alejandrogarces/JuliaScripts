@@ -7,7 +7,7 @@ Se supone que la forma cuadratica es convexa $$\mu$$-fuertemente con gradiente $
 
 $$ t_p = \frac{\mu}{\gamma^2} $$
 
-El método converge para valores tales que $$ 0 < t < 2t_p$$.    Puede notarse el comportamiento zizagueante cuando el paso se aleja de su valor óptimo.
+El método converge para valores tales que $$0<t<2t_p$$.    Puede notarse el comportamiento zizagueante cuando el paso se aleja de su valor óptimo.
 
 ![](gradiente.svg)
 
