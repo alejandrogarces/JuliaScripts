@@ -20,3 +20,18 @@ Compendio de scrips asociados al curso de métodos computacionales en sistemas e
 2. Solución numérica de ecuaciones diferenciales [Link](/ODES/)
 3. Principio de estabilidad de LaSalle en sistemas discretos [Link](/LaSalleDiscreto/)
 4. Sistemas Hamiltonianos controlados por puertos en forma discreta [Link](/DiscretePH/)
+
+
+---
+Contacto:
+
+Alejandro Garcés Ruiz
+
+---
+Como citar:
+
+  @misc{GitHubAgarces,
+  author={Alejandro Garces-Ruiz},
+  title={GitHub repository},
+  year={2024},
+  url={https://github.com/alejandrogarces/}
