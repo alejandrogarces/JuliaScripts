@@ -30,8 +30,9 @@ Alejandro Garcés Ruiz
 ---
 Como citar:
 
-  @misc{GitHubAgarces,
-  author={Alejandro Garces-Ruiz},
-  title={GitHub repository},
-  year={2024},
-  url={https://github.com/alejandrogarces/}
+
+    @misc{GitHubAgarces,
+    author={Alejandro Garces-Ruiz},
+    title={GitHub repository},
+    year={2024},
+    url={https://github.com/alejandrogarces/}
